@@ -1,0 +1,14 @@
+.fullHeight {
+    height: 100vh;
+  }
+  
+  .alert {
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 10px;
+  }
+  
+  .bg-custom3 {
+    background-color: #343a40; /* Color de fondo oscuro */
+  }
+  

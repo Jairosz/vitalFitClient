@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400|Playfair+Display:400,700,400italic|Libre+Baskerville:400,700,400italic|Muli:300,400|Open+Sans:400,300,700|Oswald:400,700|Raleway:400,100,300,700|Montserrat:400,700|Merriweather:400,300,300italic,400italic,700|Bree+Serif|Vollkorn:400italic,400,700|Abril+Fatface|Cardo:400,400italic);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:host {
+  --background-color: #fff;
+  --text-color: #000;
+  --navbar-bg-color: #343a40;
+  --navbar-text-color: #fff;
+  --primary-color: #007bff;
+  --overlay-color: rgba(0, 0, 0, 0.5);
+  --section-bg-color: #f8f9fa;
+  --card-bg-color: #fff;
+  --card-text-color: #000;
+  --text-color-secondary:black;
+  --text-color-primary:white;
+  --background-image-url: url('../../assets/images/mainimglight.png');
+  --mainTextDefinition:#ffffff50;
+
+}
+
+/* Variables de color para modo oscuro */
+:host.dark-mode {
+  --background-color: #343a40;
+  --text-color: #fff;
+  --navbar-bg-color: #212529;
+  --navbar-text-color: #fff;
+  --primary-color: #007bff;
+  --overlay-color: rgba(0, 0, 0, 0.7);
+  --section-bg-color: #212529;
+  --card-bg-color: #495057;
+  --card-text-color: #fff;
+  --text-color-secondary: white;
+  --text-color-primary: black;
+  --background-image-url: url('../../assets/images/mainimgdark.jpeg');
+  --mainTextDefinition:#00000050;
+
+}
+
+p{
+  color:var(--text-color-secondary);
+}
+h5{
+  color:var(--text-color-secondary);
+
+}
+.navbar {
+  background-color: var(--text-color-primary);
+}
+
+.nav-link,
+.link,
+.sign-in,
+.sign-up,
+.colorchange {
+  color: var(--navbar-text-color) !important;
+}
+
+.main-section {
+  position: relative;
+  height: 100vh;
+  background: var(--background-image-url) no-repeat center
+    center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.overlay {
+  background-color: var(--overlay-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.section-title {
+  margin: 50px 0 30px;
+  color: var(--text-color);
+}
+
+.card {
+  border: none;
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+}
+
+.py-5 {
+  background-color: var(--section-bg-color);
+}
+.mainText {
+  background-color: var(--mainTextDefinition);
+  border-radius: 15px;
+  padding: 10px;
+  width: min(500px,calc(100% - 4rem));
+
+}
+.lead {
+  color:var(--text-color-primary);
+}
+
+.custom-font {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color-secondary);
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .hide-on-small {
+    display: none;
+  }
+  .mobile{
+    display:none;
+  }
+}

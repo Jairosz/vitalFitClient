@@ -1,0 +1,19 @@
+
+.bg-custom{
+    background: linear-gradient(to bottom, rgb(139, 41, 78) 20%, #000000 100%);
+}
+.bg-custom2{
+    background: linear-gradient(to bottom, rgb(139, 41, 78) 20%, #000000 100%);
+}
+
+.bg-custom3{
+    background: linear-gradient(to bottom, rgb(139, 41, 78) 20%, #000000 100%);
+}
+.fullHeight{
+    min-height: 100vh;
+}
+.custom-xs-center {
+    display: flex;
+    justify-content: center;
+  }
+  

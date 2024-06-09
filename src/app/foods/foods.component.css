@@ -1,0 +1,33 @@
+.bg-custom {
+  background: linear-gradient(to bottom, rgb(139, 41, 78) 20%, #000000 100%);
+}
+.bg-custom2 {
+  background: linear-gradient(to bottom, rgb(139, 41, 78) 20%, #000000 100%);
+}
+
+.bg-custom3 {
+  background: linear-gradient(to bottom, rgb(139, 41, 78) 20%, #000000 100%);
+}
+.fullHeight {
+  min-height: 100vh;
+}
+
+.custom-xs-center {
+  display: flex;
+  justify-content: center;
+}
+
+.customButon {
+  width: fit-content;
+}
+@media (max-width: 575.98px) {
+  .custom-xs-center {
+    display: flex;
+    justify-content: center;
+  }
+  .btn {
+    width: fit-content;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+  }
+}

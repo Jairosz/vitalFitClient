@@ -1,0 +1,180 @@
+<div class="modal fade" id="dietasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Formulario Comida Template</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="dietForm">
+          <div class="row mb-3">
+            <div class="col-6">
+              <label for="name" class="form-label">Nombre del plato</label>
+              <input id="name" formControlName="name" class="form-control" type="text" placeholder="Introduce nombre del plato">
+              <div *ngIf="dietForm.get('name')?.invalid && dietForm.get('name')?.touched" class="text-danger">
+                Name is required.
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="description" class="form-label">Descripción Breve</label>
+              <input id="description" formControlName="description" class="form-control" type="text" placeholder="Introduce una descripción breve">
+              <div *ngIf="dietForm.get('description')?.invalid && dietForm.get('description')?.touched" class="text-danger">
+                Description is required.
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <label for="long_description" class="form-label">Descripción Detallada</label>
+              <input id="long_description" formControlName="long_description" class="form-control" type="text" placeholder="Introduce una descripción detallada">
+              <div *ngIf="dietForm.get('long_description')?.invalid && dietForm.get('long_description')?.touched" class="text-danger">
+                Long Description is required.
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="kcal" class="form-label">Kcals</label>
+              <input id="kcal" formControlName="kcal" class="form-control" type="number" placeholder="Enter kcal">
+              <div *ngIf="dietForm.get('kcal')?.invalid && dietForm.get('kcal')?.touched" class="text-danger">
+                Kcal is required and must be a positive number.
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <label for="proteins" class="form-label">Proteinas</label>
+              <input id="proteins" formControlName="proteins" class="form-control" type="number" placeholder="Enter proteins">
+              <div *ngIf="dietForm.get('proteins')?.invalid && dietForm.get('proteins')?.touched" class="text-danger">
+                Proteins are required and must be a positive number.
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="carbohydrates" class="form-label">Carbohidratos</label>
+              <input id="carbohydrates" formControlName="carbohydrates" class="form-control" type="number" placeholder="Enter carbohydrates">
+              <div *ngIf="dietForm.get('carbohydrates')?.invalid && dietForm.get('carbohydrates')?.touched" class="text-danger">
+                Carbohydrates are required and must be a positive number.
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <label for="fats" class="form-label">Grasas</label>
+              <input id="fats" formControlName="fats" class="form-control" type="number" placeholder="Enter fats">
+              <div *ngIf="dietForm.get('fats')?.invalid && dietForm.get('fats')?.touched" class="text-danger">
+                Fats are required and must be a positive number.
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="fiber" class="form-label">Fibras</label>
+              <input id="fiber" formControlName="fiber" class="form-control" type="number" placeholder="Enter fiber">
+              <div *ngIf="dietForm.get('fiber')?.invalid && dietForm.get('fiber')?.touched" class="text-danger">
+                Fiber is required and must be a positive number.
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <label for="vitamins" class="form-label">Vitaminas</label>
+              <input id="vitamins" formControlName="vitamins" class="form-control" type="text" placeholder="Enter vitamins">
+              <div *ngIf="dietForm.get('vitamins')?.invalid && dietForm.get('vitamins')?.touched" class="text-danger">
+                Vitamins are required.
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="minerals" class="form-label">Minerales</label>
+              <input id="minerals" formControlName="minerals" class="form-control" type="text" placeholder="Enter minerals">
+              <div *ngIf="dietForm.get('minerals')?.invalid && dietForm.get('minerals')?.touched" class="text-danger">
+                Minerals are required.
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12">
+              <label for="image" class="form-label">URL imagen</label>
+              <input id="image" formControlName="image" class="form-control" type="text" placeholder="Introduce URL de la imagen">
+              <div *ngIf="dietForm.get('image')?.invalid && dietForm.get('image')?.touched" class="text-danger">
+                la URL de la imagen es obligatoria.
+              </div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12">
+              <label for="shared" class="form-label">Publicar</label>
+              <br>
+              <select formControlName="shared" name="shared" id="shared" class="form-select">
+                <option value="1">Sí</option>
+                <option value="0">No</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dietasModal" (click)="editingDiet === null ? onCreate() : onEdit()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="dietasDeleteModal" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitleId">Confirmación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          ¿Está seguro de que quiere eliminar la comida?
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="confirmRemove()">Sí</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid bg-custom3">
+
+  <div class="row h-100">
+    <div class="col-sm-2 col-md-3 col-xl-2 col-xs-2">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col-sm-10 col-md-9 col-xl-10 fullHeight ">
+      <div class="row">
+        <button class="btn btn-primary mx-auto px-2 mt-4 customButon" data-bs-toggle="modal" data-bs-target="#dietasModal"
+        (click)="onCreateButtonClicked()"> CREAR COMIDA
+      </button>
+      </div>
+      <div class="row ">
+        @for (meal of foods; track $index) {
+          <div class="col-lg-4 col-md-6 col-sm-12 py-4 custom-xs-center">
+            <div class="card p-2" style="width: 18rem;">
+              <img src="{{meal.image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{meal.name}}</h5>
+                <p class="card-text">{{meal.description}}</p>
+                <p class="card-text">{{meal.long_description}}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">KCAL: {{meal.kcal}} | PROT: {{meal.proteins}}</li>
+                <li class="list-group-item">CH: {{meal.carbohydrates}} | LIP: {{meal.fats}}</li>
+                <li class="list-group-item">FB: {{meal.fiber}} | VIT: {{meal.vitamins}}</li>
+                <li class="list-group-item">MINERALES: {{meal.minerals}}</li>
+              </ul>
+              <div class="card-body d-flex justify-content-between align-items-end ">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dietasModal"
+                  (click)="onEditButtonClicked(meal)">Editar</button>
+                <button type="button" class="btn btn-danger"
+                  (click)="onRemoveButtonClicked(meal)">Borrar</button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

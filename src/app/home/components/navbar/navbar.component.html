@@ -1,0 +1,49 @@
+<div class="d-flex flex-sm-column align-items-center align-items-sm-start px-3 pt-2 text-white">
+    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-5 d-none d-sm-inline">VitalFit Menu</span>
+    </a>
+    <ul class="nav nav-pills flex-sm-column mb-sm-auto mb-0 align-items-center align-items-sm-start justify-content-between flex-grow-1" id="menu">
+        <li>
+            <a routerLink="/home" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                <i class="fs-4 bi-speedometer2 "></i> <span class="ms-3 d-none d-sm-inline text-light">Inicio</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/foods" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                <i class="fs-4 bi bi-activity"></i> <span class="ms-3 d-none d-sm-inline text-light">Comidas</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/exercises" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                <i class="fs-4 bi bi-bar-chart-fill "></i> <span class="ms-3 d-none d-sm-inline text-light">Ejercicios</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/shared" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                <i class="fs-4 bi bi-award "></i> <span class="ms-3 d-none d-sm-inline text-light">VitalFit Share</span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/tips" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                <i class="fs-4 bi bi-bag-check-fill "></i> <span class="ms-3 d-none d-sm-inline text-light">VitalFit Tips</span>
+            </a>
+        </li>
+        <br>
+        @if(globals.usuario){
+        <div class="dropdown pb-4">
+            <a  class="d-flex align-items-center text-white text-decoration-none dropdown-toggle mt-4" id="dropdownUser1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{globals.usuario.pfp}}" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                <span class="d-none d-sm-inline mx-1">{{globals.usuario.name}}</span>
+            </a>
+            <ul aria-labelledby="dropdownUser1" class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" routerLink="/profile">Configuración</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" (click)="closeSession()">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    }
+    </ul>
+</div>

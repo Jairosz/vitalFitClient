@@ -1,0 +1,35 @@
+<img class="bg1" src="../../assets/images/bg1.jpg" alt="">
+<div class="wrap-login100">
+    <form [formGroup]="form" class="login100-form validate-form">
+        <img src="../../assets/images/logo.png" class="login100-form-logo">
+        <br />
+        <span class="login100-form-title p-b-34 p-t-27"> VitalFit Pro </span>
+        <br>
+        <div class="wrap-input100" data-validate="Enter username">
+            <input formControlName="email" class="input100" type="text" name="email" placeholder="Correo electrónico" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-at-sign"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
+            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+        </div>
+        <p class="error" *ngIf="submitted && form.controls.email.hasError('email')">El email no tiene el formato correspondiente</p>
+        <p class="error" *ngIf="submitted && form.controls.email.hasError('required')">El email es requerido</p>
+        <br>
+        <div class="wrap-input100" data-validate="Enter password">
+            <input formControlName="password" class="input100" type="password" name="pass" placeholder="Contraseña" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+            <span class="focus-input100" data-placeholder="&#xf207;"></span>
+        </div>
+        <p class="error" *ngIf="submitted && form.controls.password.hasError('required')">La contraseña es requerida</p>
+        <br>
+        <p class="error" *ngIf="submitted && invalidCredentials">Credenciales inválidas. Por favor, inténtelo de nuevo.</p>
+        <br>
+        <div class="container-login100-form-btn">
+            <button type="button" (click)="sendForm()" class="login100-form-btn">
+                Iniciar sesión
+            </button>
+        </div>
+        <br>
+        <div class="text-center p-t-90">
+            <a class="txt1" routerLink="/register">¿No tienes cuenta? Regístrate</a>
+        </div>
+    </form>
+</div>
